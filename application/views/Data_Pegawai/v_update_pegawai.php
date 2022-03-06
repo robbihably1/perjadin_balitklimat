@@ -60,7 +60,7 @@
                                                 <div class="form-group">
                                                     <label><b>Jabatan</b></label></br>
                                                     <?php $jabatan1 = $ep->jabatan ?>
-                                                    <select name="id_jabatan" id="jabatan" class="form-control" required>
+                                                    <select name="id_jabatan" id="id_jabatan" class="form-control" required>
                                                         <option value="">--Pilih Jabatan--</option>
                                                         <?php foreach ($jabatan as $row) : ?>
                                                             <option <?php if ($jabatan1 == $row->jabatan) {

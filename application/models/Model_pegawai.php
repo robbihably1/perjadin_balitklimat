@@ -83,7 +83,7 @@ class Model_pegawai extends CI_model
 		$this->db->select('*');
 		$this->db->from('data_pegawai');
 		$this->db->join('data_jabatan', 'data_pegawai.id_jabatan=data_jabatan.id_jabatan');
-		return $this->db->where('jabatan','Plt. Kepala Balai')->get()->result();
+		return $this->db->where('jabatan','Plh. Kepala Balai')->get()->result();
 	}
 	public function getListKepalaBalai()
 	{

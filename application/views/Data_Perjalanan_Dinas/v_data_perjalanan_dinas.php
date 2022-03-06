@@ -7,8 +7,9 @@
                         <h3 class="m-0 font-weight-bold text-primary">Data Perjalanan Dinas</h3><br>
                         <div class="flash-data" id="flash2" data-flash="<?= $this->session->flashdata('sukses'); ?>"></div>
                         <div class="flash-data" id="flash" data-flash="<?= $this->session->flashdata('error'); ?>"></div>
-                        <div class="col-md-4 grid-margin">
+                        <div class="col-md-12 grid-margin">
                             <a href="<?php echo base_url() ?>perjalanan_dinas/tambah" class="btn btn-success btn-md"><i class="ti ti-plus"></i>Tambah Perjalanan Dinas</a>
+                            <a href="<?php echo base_url() ?>anggota_perjadin/anggota" class="btn btn-info btn-md">Daftar Perjalanan Dinas By Pegawai</a>
                         </div>
                         <div class="col-md-12 grid-margin">
                             <div class="card shadow mb-12">
@@ -49,11 +50,11 @@
                                                             <td colspan="12" class="hiddenRow">
                                                                 <div class="accordian-body collapse" id="data<?php echo $j->id_perjalanan_dinas ?>">
                                                                     <table style="margin-top:5px; width:97%; margin-left:21px;margin-bottom:5px;" class="table table-bordered table-md">
-                                                                        <a style="margin-top:5px; margin-left:21px;margin-bottom:5px;"class="btn btn-sm btn-info mdi mdi-file"> Surat Pengajuan</a>
-                                                                        <a style="margin-top:5px; margin-left:21px;margin-bottom:5px;"class="btn btn-sm btn-info mdi mdi-file"> Perincian</a>
-                                                                        <a style="margin-top:5px; margin-left:21px;margin-bottom:5px;"class="btn btn-sm btn-info mdi mdi-file"> Surat Tugas (Kepala Balai)</a>
-                                                                        <a style="margin-top:5px; margin-left:21px;margin-bottom:5px;"class="btn btn-sm btn-info mdi mdi-file"> Surat Tugas (Plt. Kepala Balai)</a>
-                                                                        <a style="margin-top:5px; margin-left:21px;margin-bottom:5px;"class="btn btn-sm btn-info mdi mdi-file"> Norminatif</a>
+                                                                        <a style="margin-top:10px; margin-left:21px;margin-bottom:5px;"class="btn btn-sm btn-info mdi mdi-file"> Surat Pengajuan</a>
+                                                                        <a style="margin-top:10px; margin-left:21px;margin-bottom:5px;"class="btn btn-sm btn-info mdi mdi-file"> Perincian</a>
+                                                                        <a style="margin-top:10px; margin-left:21px;margin-bottom:5px;"class="btn btn-sm btn-info mdi mdi-file" href="<?php echo base_url('pdf/surat_tugas/' . $j->id_perjalanan_dinas) ?>"> Surat Tugas (Kepala Balai)</a>
+                                                                        <a style="margin-top:10px; margin-left:21px;margin-bottom:5px;"class="btn btn-sm btn-info mdi mdi-file" href="<?php echo base_url('pdf/surat_tugas_plt/' . $j->id_perjalanan_dinas) ?>"> Surat Tugas (Plh. Kepala Balai)</a>
+                                                                        <a style="margin-top:10px; margin-left:21px;margin-bottom:5px;"class="btn btn-sm btn-info mdi mdi-file"> Norminatif</a>
                                                                         
                                                                         <thead class="thead-light">
                                                                             <tr class="info">

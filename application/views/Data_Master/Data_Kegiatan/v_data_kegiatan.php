@@ -19,7 +19,7 @@
                                         <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" style="width:145%; height:100%">
                                                 <thead class="thead-light">
                                                     <tr>
-                                                        <th style="width:12%" title="kode kegiatan">Kode Kegiatan</th>
+                                                        <th style="width:8%" title="kode kegiatan">Kode Kegiatan</th>
                                                         <th title="Judul kegiatan">Judul Kegiatan</th>
                                                         <th title="Jenis kegiatan">Jenis Kegiatan</th>
                                                         <th style="width:9%" title="Tahun">Tahun</th>

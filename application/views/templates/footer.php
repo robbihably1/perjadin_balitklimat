@@ -48,6 +48,15 @@
     <script src="<?= base_url('assets'); ?>/js/ddtf.js"></script>
     <script src="<?= base_url('assets'); ?>/js/myscript.js"></script>
     <script>
+		var table = document.getElementById("dtBasicExample"), sumHsl = 0;
+		for(var t = 1; t < table.rows.length; t++)
+		{
+			sumHsl = sumHsl + parseInt(table.rows[t].cells[7].innerHTML);
+		}
+		document.getElementById("hasil").innerHTML = "Sum Value = "+ sumHsl;
+		
+	</script>
+    <script>
         jQuery('#dtBasicExample').ddTableFilter();
     </script>
 

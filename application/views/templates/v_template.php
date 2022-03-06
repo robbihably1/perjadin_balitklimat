@@ -319,7 +319,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?> jadwal_kgb" aria-expanded="false">
+            <a class="nav-link" href="<?php echo base_url(); ?>statistik" aria-expanded="false">
               <i style="font-size:20px" class="mdi mdi-chart-bar menu-icon"></i>
               <span class="menu-title">Statistik Pegawai</span>
               <i class="menu"></i>

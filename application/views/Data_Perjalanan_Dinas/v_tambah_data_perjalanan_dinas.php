@@ -84,9 +84,9 @@
                                         <label><b>No. Surat Tugas</b></label>
                                         <div class="input-group mb-2">
                                             <div class="input-group-prepend">
-                                                <div style="width:130px;color:dimgray" class="input-group-text">/SPT/KP.340/I.8/</div>
+                                                <div style="width:130px;color:dimgray" class="input-group-text">/KP.440/I.8.3/</div>
                                             </div>
-                                            <input type="hidden" name="kode_surat" value="/SPT/KP.340/I.8/" class="form-control">
+                                            <input type="hidden" name="kode_surat" value="/KP.440/I.8.3/" class="form-control">
                                             <input type="text" name="no_surat_tugas" placeholder="mm/yyyy" class="form-control" required>
                                             <?php echo form_error('no_surat_tugas', '<div class="text-small text-danger"></div>') ?>
                                         </div>
@@ -127,6 +127,7 @@
                                             <?php } ?>
                                         </select>
                                     </div>
+                                    <a href="<?php echo base_url() ?>kota/tambah"><label style="margin-bottom:30px;margin-top:-25px;color:blue">Klik disini<Label></a><label>&nbsp untuk menambahkan kota</label>
                                     <div class="form-group">
                                         <label><b>Kota Tujuan</b></label></br>
                                         <select name="id_kota_tujuan" id="id_kota_tujuan" class="form-control" required>
@@ -167,9 +168,9 @@
                                         </select>
                                     </div>
                                     <div class="form-group" id="pb">
-                                        <label><b>TTD surat tugas oleh Plt. Kepala Balai</b></label></br>
-                                        <select title="Pilih Plt. Kepala Balai" name="nip_plt_kb" id="nip_plt_kb" class="form-control">
-                                            <option value="null">--Pilih Plt Kepala Balai--</option>
+                                        <label><b>TTD surat tugas oleh Plh. Kepala Balai</b></label></br>
+                                        <select title="Pilih Plh. Kepala Balai" name="nip_plt_kb" id="nip_plt_kb" class="form-control">
+                                            <option value="null">--Pilih Plh Kepala Balai--</option>
                                             <?php foreach ($nip_plt_kb as $row) { ?>
                                                 <option value="<?php echo $row->nip; ?>"><?php echo $row->nip . " | " . $row->nama_pegawai; ?></option>';
                                                 }

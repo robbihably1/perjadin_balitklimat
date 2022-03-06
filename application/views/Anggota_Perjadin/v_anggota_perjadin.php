@@ -13,7 +13,7 @@
                                     <div class="card">
                                         <!-- <div class="card-body"> -->
                                         <div class="table-responsive pt-3 ">
-                                            <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" style="width:130%; height:100%">
+                                            <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" style="width:100%; height:100%">
                                                 <thead class="thead-light">
                                                     <tr>
                                                         <th style="width:3%">No</th>
@@ -61,3 +61,4 @@
             </div>
         </div>
     </div>
+   

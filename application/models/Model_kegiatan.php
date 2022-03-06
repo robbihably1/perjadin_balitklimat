@@ -47,4 +47,13 @@ class Model_kegiatan extends CI_model
 	{
 		return $this->db->where('kode_kegiatan', $kode_kegiatan)->get('data_kegiatan')->row();
 	}
+	public function kodeKegiatanCheck($kode_kegiatan){
+		$hue = $this->db->where('kode_kegiatan', $kode_kegiatan)
+		->get('data_kegiatan');
+		if($hue->num_rows() == 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

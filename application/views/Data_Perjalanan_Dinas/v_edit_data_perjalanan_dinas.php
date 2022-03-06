@@ -98,11 +98,11 @@
                                                     <label><b>No. Surat Tugas</b></label>
                                                     <div class="input-group mb-2">
                                                         <div class="input-group-prepend">
-                                                            <div style="width:130px;color:dimgray" class="input-group-text">/SPT/KP.340/I.8/</div>
+                                                            <div style="width:130px;color:dimgray" class="input-group-text">/KP.440/I.8.3/</div>
                                                         </div>
-                                                        <input type="hidden" name="kode_surat" value="/SPT/KP.340/I.8/" class="form-control">
+                                                        <input type="hidden" name="kode_surat" value="/KP.440/I.8.3/" class="form-control">
                                                         <input type="text" name="no_surat_tugas" <?php $no = $pd->no_surat_tugas;
-                                                                                                    $no_surat_fix   = substr($no, 16,); ?> value="<?php echo $no_surat_fix ?>" placeholder="mm/yyyy" class="form-control" required>
+                                                                                                    $no_surat_fix   = substr($no, 14,); ?> value="<?php echo $no_surat_fix ?>" placeholder="mm/yyyy" class="form-control" required>
                                                         <?php echo form_error('no_surat_tugas', '<div class="text-small text-danger"></div>') ?>
                                                     </div>
                                                 </div>
@@ -156,6 +156,7 @@
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>
+                                                <a href="<?php echo base_url() ?>kota/tambah"><label style="margin-bottom:30px;margin-top:-25px;color:blue">Klik disini<Label></a><label>&nbsp untuk menambahkan kota</label>
                                                 <div class="form-group">
                                                     <label><b>Kota Tujuan</b></label></br>
                                                     <?php $kt1 = $pd->kota_tujuan ?>
@@ -207,10 +208,10 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group" id="pb">
-                                                    <label><b>TTD surat tugas oleh Plt. Kepala Balai</b></label>
+                                                    <label><b>TTD surat tugas oleh Plh. Kepala Balai</b></label>
                                                     <?php $npkb = $pd->nip_plt_kb ?>
-                                                    <select title="Pilih Plt. Kepala Balai" name="nip_plt_kb" id="nip_plt_kb" class="form-control">
-                                                        <option value="null">--Pilih Plt Kepala Balai--</option>
+                                                    <select title="Pilih Plh. Kepala Balai" name="nip_plt_kb" id="nip_plt_kb" class="form-control">
+                                                        <option value="null">--Pilih Plh Kepala Balai--</option>
                                                         <?php foreach ($nip_plt_kb as $row) : ?>
                                                             <option <?php if ($npkb == $row->nip) {
                                                                         echo 'selected="selected"';

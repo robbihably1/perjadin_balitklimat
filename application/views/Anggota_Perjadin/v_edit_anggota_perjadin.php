@@ -29,6 +29,18 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
+                                            <label><b>No. SPPD</b></label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div style="width:130px;color:dimgray" class="input-group-text">/SPPD/I.8.3/</div>
+                                                </div>
+                                                <input type="hidden" name="kode_sppd" value="/SPPD/I.8.3/" class="form-control">
+                                                <input type="text" name="no_sppd" <?php $no = $apd->no_sppd2;
+                                                                                            $no_sppd_fix   = substr($no, 12,); ?> value="<?php echo $no_sppd_fix ?>" placeholder="mm/yyyy" class="form-control" required>
+                                                <?php echo form_error('no_surat_tugas', '<div class="text-small text-danger"></div>') ?>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label><b>No. Surat Tugas</b></label>
                                             <input readonly type="text" value="<?php echo $apd->no_surat_tugas ?>" class="form-control" required>
                                         </div>
@@ -47,7 +59,7 @@
                                         <div class="form-group">
                                             <label><b>Uang Harian</b></label>
                                             <input readonly type="number" name="uang_harian" <?php if ($apd->kota == $apd->kota_tujuan) {
-                                                                                            ?> value="<?php echo $apd->dalam_kota_tujuan * $apd->lama_perjalanan ?>" <?php
+                                                                                                ?> value="<?php echo $apd->dalam_kota_tujuan * $apd->lama_perjalanan ?>" <?php
                                                                                                                                                                     } else {
                                                                                                                                                                         ?>value="<?php echo $apd->luar_kota_tujuan * $apd->lama_perjalanan ?>" <?php
                                                                                                                                                                                                                                             } ?> class="form-control" required>

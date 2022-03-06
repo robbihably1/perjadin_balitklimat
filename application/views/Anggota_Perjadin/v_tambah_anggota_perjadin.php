@@ -44,6 +44,17 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
+                                        <label><b>No. SPPD</b></label>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div style="width:130px;color:dimgray" class="input-group-text">/SPPD/I.8.3/</div>
+                                            </div>
+                                            <input type="hidden" name="kode_sppd" value="/SPPD/I.8.3/" class="form-control">
+                                            <input type="text" name="no_sppd" placeholder="mm/yyyy" class="form-control" required>
+                                            <?php echo form_error('no_sppd', '<div class="text-small text-danger"></div>') ?>
+                                        </div>
+                                    </div>
+                                        <div class="form-group">
                                             <label><b>No. Surat Tugas</b></label>
                                             <input readonly type="text" value="<?php echo $dpd->no_surat_tugas ?>" class="form-control" required>
                                         </div>

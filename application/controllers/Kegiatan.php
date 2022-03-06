@@ -5,7 +5,7 @@ class Kegiatan extends CI_Controller
     public $result = [
         'status'  => false,
         'data'    => []
-      ];
+    ];
     function __construct()
     {
         parent::__construct();
@@ -14,8 +14,8 @@ class Kegiatan extends CI_Controller
         $this->load->Model('Model_jenis_keg');
         $this->load->helper('url');
         if ($this->session->userdata('logged_in') == false) {
-			redirect('login');
-		}
+            redirect('login');
+        }
     }
     function index()
     {
@@ -46,9 +46,14 @@ class Kegiatan extends CI_Controller
             'nip_pj_rrr' => $this->input->post('nip_pj_rrr'),
             'biaya_pengeluaran' => $this->input->post('biaya_pengeluaran')
         );
-        $this->Model_kegiatan->input_data($data, 'data_kegiatan');
-        $this->session->set_flashdata('sukses','Data kegiatan dengan kode kegiatan '.$kode_kegiatan.' berhasil ditambahkan');
-        redirect('kegiatan');
+        if ($this->Model_kegiatan->kodeKegiatanCheck($kode_kegiatan) == true) {
+            $this->Model_kegiatan->input_data($data, 'data_kegiatan');
+            $this->session->set_flashdata('sukses', 'Data kegiatan dengan kode kegiatan ' . $kode_kegiatan . ' berhasil ditambahkan');
+            redirect('kegiatan');
+        } else {
+            $this->session->set_flashdata('error', 'Kode kegiatan sudah tersedia, pilih kode kegiatan lain');
+            redirect('kegiatan/tambah');
+        }
     }
     function edit()
     {
@@ -82,25 +87,26 @@ class Kegiatan extends CI_Controller
         );
         $this->load->Model('Model_kegiatan');
         $this->Model_kegiatan->update_data($where, $data, 'data_kegiatan');
-        $this->session->set_flashdata('sukses','Data kegiatan berhasil diperbarui');
+        $this->session->set_flashdata('sukses', 'Data kegiatan berhasil diperbarui');
         redirect('kegiatan');
     }
     function hapus($kode_kegiatan)
     {
         $where = array('kode_kegiatan' => $kode_kegiatan);
-        if($this->Model_kegiatan->hapus_data($where, 'data_kegiatan')==true):
-        $this->session->set_flashdata('sukses','Data kegiatan berhasil dihapus');
-        redirect('kegiatan');
+        if ($this->Model_kegiatan->hapus_data($where, 'data_kegiatan') == true) :
+            $this->session->set_flashdata('sukses', 'Data kegiatan berhasil dihapus');
+            redirect('kegiatan');
         endif;
-        if($this->Model_kegiatan->hapus_data($where, 'data_kegiatan')==false):
-            $this->session->set_flashdata('error','Data kegiatan gagal dihapus karena data kegiatan ini digunakan pada tabel lain');
+        if ($this->Model_kegiatan->hapus_data($where, 'data_kegiatan') == false) :
+            $this->session->set_flashdata('error', 'Data kegiatan gagal dihapus karena data kegiatan ini digunakan pada tabel lain');
             redirect('kegiatan');
         endif;
     }
 
-    function get_pegawai(){
-		$kode=$this->input->post('nip_pj_keg');
-		$data=$this->Model_pegawai->get_data_barang_bykode($kode);
-		echo json_encode($data);
-	}
+    function get_pegawai()
+    {
+        $kode = $this->input->post('nip_pj_keg');
+        $data = $this->Model_pegawai->get_data_barang_bykode($kode);
+        echo json_encode($data);
+    }
 }
