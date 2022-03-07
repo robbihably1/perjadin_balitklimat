@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2022 at 04:25 AM
+-- Generation Time: Mar 07, 2022 at 06:49 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -31,7 +31,8 @@ CREATE TABLE `data_anggota_perjadin` (
   `id_anggota_perjadin` int(11) NOT NULL,
   `id_perjalanan_dinas` int(11) NOT NULL,
   `nip_anggota_perjadin` varchar(18) NOT NULL,
-  `no_sppd` int(11) DEFAULT NULL,
+  `no_sppd` varchar(11) DEFAULT NULL,
+  `no_sppd2` varchar(25) NOT NULL,
   `no_kas` int(11) DEFAULT NULL,
   `uang_harian` int(11) NOT NULL,
   `uang_transportasi` int(11) DEFAULT NULL,
@@ -50,11 +51,11 @@ CREATE TABLE `data_anggota_perjadin` (
 -- Dumping data for table `data_anggota_perjadin`
 --
 
-INSERT INTO `data_anggota_perjadin` (`id_anggota_perjadin`, `id_perjalanan_dinas`, `nip_anggota_perjadin`, `no_sppd`, `no_kas`, `uang_harian`, `uang_transportasi`, `hari1`, `hari2`, `hari3`, `biaya1`, `biaya2`, `biaya3`, `uang_penginapan`, `total_pendapatan`, `status_perjalanan_dinas`) VALUES
-(3, 14, '116058061191089', NULL, NULL, 3960000, 50000, 1, 3, 1, 200000, 300000, 100000, 1200000, 0, 'Belum Berangkat'),
-(6, 14, '116058061191078', NULL, NULL, 3960000, 50000, 0, 0, 0, 0, 0, 0, 0, 0, 'Sedang Berlangsung'),
-(25, 13, '116058061191076', NULL, NULL, 5400000, 500000, 0, 0, 0, 0, 0, 0, 0, 5900000, 'Sedang Berlangsung'),
-(26, 13, '116058061191077', NULL, NULL, 5400000, 0, 0, 0, 0, 0, 0, 0, 0, 5400000, 'Belum Berangkat');
+INSERT INTO `data_anggota_perjadin` (`id_anggota_perjadin`, `id_perjalanan_dinas`, `nip_anggota_perjadin`, `no_sppd`, `no_sppd2`, `no_kas`, `uang_harian`, `uang_transportasi`, `hari1`, `hari2`, `hari3`, `biaya1`, `biaya2`, `biaya3`, `uang_penginapan`, `total_pendapatan`, `status_perjalanan_dinas`) VALUES
+(68, 21, '116058061191078', '2', '/SPPD/I.8.3/03/2022', NULL, 4300000, 0, 0, 0, 0, 0, 0, 0, 0, 4300000, 'Sedang Berlangsung'),
+(70, 20, '116058061191076', '3', '/SPPD/I.8.3/03/2022', NULL, 860000, 0, 0, 0, 0, 0, 0, 0, 0, 860000, 'Sedang Berlangsung'),
+(89, 20, '116058061191077', '4', '/SPPD/I.8.3/03/2022', NULL, 860000, 0, 0, 0, 0, 0, 0, 0, 0, 860000, 'Selesai'),
+(90, 21, '116058061191077', '5', '/SPPD/I.8.3/03/2022', NULL, 4300000, 0, 0, 0, 0, 0, 0, 0, 0, 4300000, 'Sedang Berlangsung');
 
 -- --------------------------------------------------------
 
@@ -170,7 +171,8 @@ INSERT INTO `data_jabatan` (`id_jabatan`, `jabatan`) VALUES
 (29, 'Kasubbag Tata Usaha'),
 (30, 'Calon Peneliti'),
 (31, 'Calon Teknisi'),
-(32, 'Sopir');
+(32, 'Sopir'),
+(33, 'Plh. Kepala Balai');
 
 -- --------------------------------------------------------
 
@@ -213,8 +215,9 @@ CREATE TABLE `data_kegiatan` (
 
 INSERT INTO `data_kegiatan` (`kode_kegiatan`, `judul_kegiatan`, `id_jenis_keg`, `tahun`, `nip_pj_kegiatan`, `nip_pj_rrr`, `biaya_pengeluaran`) VALUES
 ('RPTP-1.1', 'Pemetaan lahan pertanian Indonesiaa', 8, 2023, '116058061191089', '116058061191089', 0),
-('RPTP1', 'Pemetaan Lahan Pertanian Indonesia', 2, 2022, '116058061191076', '116058061191076', 0),
-('RPTP1.2', 'Pemetaan Lahan Pertanian Indonesiaaaa', 2, 2022, '116058061191077', '116058061191076', 0);
+('RPTP1', 'Pemetaan Lahan Pertanian Indonesia', 2, 2022, '116058061191076', '116058061191076', 1720000),
+('RPTP1.2', 'Pemetaan Lahan Pertanian Indonesiaaaa', 2, 2022, '116058061191077', '116058061191076', 8600000),
+('RPTP1.2.2', 'Pemetaan Planet', 2, 2022, '116058061191079', '116058061191079', 0);
 
 -- --------------------------------------------------------
 
@@ -240,7 +243,8 @@ INSERT INTO `data_kota` (`id_kota`, `kota`, `id_sbuh`) VALUES
 (10, 'Kabupaten Bogor', 13),
 (11, 'Kota Bandung', 13),
 (12, 'Jakarta Selatan', 14),
-(13, 'Jakarta Timur', 14);
+(13, 'Jakarta Timur', 14),
+(14, 'Kabupaten Magetan', 17);
 
 -- --------------------------------------------------------
 
@@ -260,8 +264,8 @@ CREATE TABLE `data_mak` (
 --
 
 INSERT INTO `data_mak` (`kode_mak`, `judul_mak`, `tahun`, `banyak_anggaran`) VALUES
-('1', 'Biaya perjalanan dinas dalam negeri', 2021, 13700000),
-('2', 'Biaya Perjalanan Dinas Luar Negeri', 2022, 53000000);
+('1', 'Biaya perjalanan dinas dalam negeri', 2021, 14680000),
+('2', 'Biaya perjalanan dinas luar negeri', 2022, 53000000);
 
 -- --------------------------------------------------------
 
@@ -306,22 +310,19 @@ CREATE TABLE `data_pegawai` (
   `email` varchar(30) NOT NULL,
   `password` varchar(50) NOT NULL,
   `no_whatsapp` varchar(20) NOT NULL,
-  `admin` varchar(10) NOT NULL,
-  `pumk` varchar(10) NOT NULL,
-  `kpa` varchar(10) NOT NULL,
-  `pj` varchar(10) NOT NULL
+  `role` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `data_pegawai`
 --
 
-INSERT INTO `data_pegawai` (`nip`, `nama_pegawai`, `foto`, `id_golongan`, `id_status_peg`, `id_pangkat`, `id_jabatan`, `id_divisi`, `nik`, `email`, `password`, `no_whatsapp`, `admin`, `pumk`, `kpa`, `pj`) VALUES
-('116058061191076', 'Robbi Hably Minassholihyn', 'fix_kolokium2.jpg', 1, 1, 1, 1, 2, '121212', 'robbihably@yahoo.com', 'hihi', '6281973034079', 'Iya', 'Iya', 'Iya', 'Iya'),
-('116058061191077', 'Lugas Munayasika', 'default.png', 3, 1, 1, 11, 2, '12121211', 'robbihabli17@gmail.com', 'hihi', '6281973034079', 'Iya', 'Iya', 'Iya', 'Iya'),
-('116058061191078', 'Reza Fahneri', 'default.png', 3, 2, 2, 13, 3, '12121211', 'robbihabli17@gmail.com', 'hihi', '6281973034079', 'Iya', 'Iya', 'Iya', 'Tidak'),
-('116058061191079', 'Nasywa', 'default.png', 1, 1, 1, 8, 2, '12121211', 'robbihably@apps.ipb.ac.id', 'hihi', '6281973034079', 'Iya', 'Iya', 'Iya', 'Tidak'),
-('116058061191089', 'Deila Saelfira', 'default.png', 1, 1, 1, 2, 3, '12121211', 'robbihably1@apps.ipb.ac.id', 'hihi', '6281973034079', 'Iya', 'Iya', 'Iya', 'Iya');
+INSERT INTO `data_pegawai` (`nip`, `nama_pegawai`, `foto`, `id_golongan`, `id_status_peg`, `id_pangkat`, `id_jabatan`, `id_divisi`, `nik`, `email`, `password`, `no_whatsapp`, `role`) VALUES
+('116058061191076', 'Robbi Hably Minassholihyn', 'WhatsApp_Image_2022-01-14_at_14_30_57.jpeg', 1, 1, 1, 1, 2, '121212', 'robbihably@yahoo.com', 'hihi', '6281973034079', ''),
+('116058061191077', 'Lugas Munayasika', 'default.png', 3, 1, 1, 11, 2, '12121211', 'robbihabli17@gmail.com', 'hihi', '6281973034079', ''),
+('116058061191078', 'Reza Fahneri', 'default.png', 3, 2, 2, 13, 3, '12121211', 'robbihabli17@gmail.com', 'hihi', '6281973034079', ''),
+('116058061191079', 'Nasywa', 'default.png', 1, 1, 1, 8, 2, '12121211', 'robbihably@apps.ipb.ac.id', 'hihi', '6281973034079', ''),
+('116058061191089', 'Deila Saelfira', 'default.png', 1, 1, 1, 33, 2, '12121211', 'robbihably1@apps.ipb.ac.id', 'hihi', '6281973034079', '');
 
 -- --------------------------------------------------------
 
@@ -335,6 +336,7 @@ CREATE TABLE `data_perjalanan_dinas` (
   `dalam_rangka` varchar(100) NOT NULL,
   `nip_pumk` varchar(18) NOT NULL,
   `tanggal_pengajuan` date NOT NULL,
+  `no_st` varchar(11) NOT NULL,
   `no_surat_tugas` varchar(25) NOT NULL,
   `kode_mak` varchar(15) NOT NULL,
   `jenis_pengajuan` varchar(5) NOT NULL,
@@ -357,9 +359,11 @@ CREATE TABLE `data_perjalanan_dinas` (
 -- Dumping data for table `data_perjalanan_dinas`
 --
 
-INSERT INTO `data_perjalanan_dinas` (`id_perjalanan_dinas`, `kode_kegiatan`, `dalam_rangka`, `nip_pumk`, `tanggal_pengajuan`, `no_surat_tugas`, `kode_mak`, `jenis_pengajuan`, `jenis_perjalanan_dinas`, `id_kota_asal`, `id_kota_tujuan`, `kendaraan`, `tanggal_berangkat`, `tanggal_kembali`, `lama_perjalanan`, `nip_ppk`, `nip_verifikator`, `nip_kpa`, `nip_bendahara`, `nip_kepala_balai`, `nip_plt_kb`) VALUES
-(13, 'RPTP1', 'Menjaga kestabilan', '116058061191076', '2022-02-24', '/SPT/KP.340/I.8/02/2022', '1', 'LS', 'Menginap', 9, 8, 'Dinas', '2022-02-25', '2022-03-11', 15, '116058061191078', '116058061191076', '116058061191078', '116058061191077', '116058061191076', '116058061191089'),
-(14, 'RPTP-1.1', 'Seminar analisis lahan pertanian', '116058061191076', '2022-02-25', '/SPT/KP.340/I.8/02/2022', '1', 'LS', 'Tidak Menginap', 9, 7, 'Dinas', '2022-03-01', '2022-03-11', 11, '116058061191078', '116058061191076', '116058061191076', '116058061191077', '116058061191076', '116058061191089');
+INSERT INTO `data_perjalanan_dinas` (`id_perjalanan_dinas`, `kode_kegiatan`, `dalam_rangka`, `nip_pumk`, `tanggal_pengajuan`, `no_st`, `no_surat_tugas`, `kode_mak`, `jenis_pengajuan`, `jenis_perjalanan_dinas`, `id_kota_asal`, `id_kota_tujuan`, `kendaraan`, `tanggal_berangkat`, `tanggal_kembali`, `lama_perjalanan`, `nip_ppk`, `nip_verifikator`, `nip_kpa`, `nip_bendahara`, `nip_kepala_balai`, `nip_plt_kb`) VALUES
+(20, 'RPTP1', 'Seminar pelatihan tentang pemetaan lahan pertanian', '116058061191076', '2022-03-06', '1', '/KP.440/I.8.3/03/2022', '1', 'LS', 'Menginap', 9, 11, 'Dinas', '2022-03-09', '2022-03-10', 2, '116058061191078', '116058061191076', '116058061191076', '116058061191077', '116058061191076', '116058061191089'),
+(21, 'RPTP1.2', 'Menjaga kestabilan', '116058061191076', '2022-03-17', '2', '/KP.440/I.8.3/03/2022', '1', 'LS', 'Menginap', 9, 11, 'Umum', '2022-03-08', '2022-03-17', 10, '116058061191078', '116058061191076', '116058061191077', '116058061191079', '116058061191076', '116058061191089'),
+(22, 'RPTP-1.1', 'Menjaga kestabilan uang', '116058061191076', '2022-03-08', '3', '/KP.440/I.8.3/03/2022', '1', 'LS', 'Menginap', 9, 13, 'Dinas', '2022-03-16', '2022-03-19', 4, '116058061191078', '116058061191076', '116058061191077', '116058061191079', '116058061191076', '116058061191089'),
+(23, 'RPTP1', 'Seminar pelatihan tentang pemetaan lahan pertanian', '116058061191076', '2022-03-06', '4', '/KP.440/I.8.3/03/2022', '1', 'LS', 'Menginap', 9, 12, 'Dinas', '2022-03-10', '2022-03-15', 6, '116058061191078', '116058061191077', '116058061191076', '116058061191077', '116058061191076', '116058061191089');
 
 -- --------------------------------------------------------
 
@@ -437,6 +441,51 @@ INSERT INTO `data_sbuh` (`id_sbuh`, `nama_provinsi`, `luar_kota`, `dalam_kota`) 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `data_tugas`
+--
+
+CREATE TABLE `data_tugas` (
+  `id_tugas` int(11) NOT NULL,
+  `penugasan` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_tugas`
+--
+
+INSERT INTO `data_tugas` (`id_tugas`, `penugasan`) VALUES
+(1, 'Kuasa Pengguna Anggaran'),
+(2, 'Pemegang Uang Muka Kerja'),
+(3, 'PJ RPTP'),
+(4, 'PJ RDHP'),
+(5, 'PJ RKTM');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detail_tugas`
+--
+
+CREATE TABLE `detail_tugas` (
+  `id_detail_tugas` int(11) NOT NULL,
+  `id_tugas` int(11) NOT NULL,
+  `nip` varchar(18) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `detail_tugas`
+--
+
+INSERT INTO `detail_tugas` (`id_detail_tugas`, `id_tugas`, `nip`) VALUES
+(1, 1, '116058061191076'),
+(2, 2, '116058061191077'),
+(3, 3, '116058061191078'),
+(4, 4, '116058061191079'),
+(5, 5, '116058061191089');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `status_kepegawaian`
 --
 
@@ -464,8 +513,8 @@ INSERT INTO `status_kepegawaian` (`id_status_peg`, `status_kepegawaian`) VALUES
 --
 ALTER TABLE `data_anggota_perjadin`
   ADD PRIMARY KEY (`id_anggota_perjadin`),
-  ADD KEY `id_perjadin_ap_perjadin` (`id_perjalanan_dinas`),
-  ADD KEY `nip_anggota_ap_peg` (`nip_anggota_perjadin`);
+  ADD KEY `id_perjalanan_dinas_ap_pd` (`id_perjalanan_dinas`),
+  ADD KEY `nip_anggota_perjadin_ap_peg` (`nip_anggota_perjadin`);
 
 --
 -- Indexes for table `data_divisi`
@@ -566,6 +615,20 @@ ALTER TABLE `data_sbuh`
   ADD PRIMARY KEY (`id_sbuh`);
 
 --
+-- Indexes for table `data_tugas`
+--
+ALTER TABLE `data_tugas`
+  ADD PRIMARY KEY (`id_tugas`);
+
+--
+-- Indexes for table `detail_tugas`
+--
+ALTER TABLE `detail_tugas`
+  ADD PRIMARY KEY (`id_detail_tugas`),
+  ADD KEY `id_tugas_det_tug` (`id_tugas`),
+  ADD KEY `nip_det_tug_peg` (`nip`);
+
+--
 -- Indexes for table `status_kepegawaian`
 --
 ALTER TABLE `status_kepegawaian`
@@ -579,7 +642,7 @@ ALTER TABLE `status_kepegawaian`
 -- AUTO_INCREMENT for table `data_anggota_perjadin`
 --
 ALTER TABLE `data_anggota_perjadin`
-  MODIFY `id_anggota_perjadin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_anggota_perjadin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `data_divisi`
@@ -597,7 +660,7 @@ ALTER TABLE `data_golongan`
 -- AUTO_INCREMENT for table `data_jabatan`
 --
 ALTER TABLE `data_jabatan`
-  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `data_jenis_keg`
@@ -609,7 +672,7 @@ ALTER TABLE `data_jenis_keg`
 -- AUTO_INCREMENT for table `data_kota`
 --
 ALTER TABLE `data_kota`
-  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `data_pangkat`
@@ -621,7 +684,7 @@ ALTER TABLE `data_pangkat`
 -- AUTO_INCREMENT for table `data_perjalanan_dinas`
 --
 ALTER TABLE `data_perjalanan_dinas`
-  MODIFY `id_perjalanan_dinas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_perjalanan_dinas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `data_role`
@@ -636,6 +699,18 @@ ALTER TABLE `data_sbuh`
   MODIFY `id_sbuh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
+-- AUTO_INCREMENT for table `data_tugas`
+--
+ALTER TABLE `data_tugas`
+  MODIFY `id_tugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `detail_tugas`
+--
+ALTER TABLE `detail_tugas`
+  MODIFY `id_detail_tugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
+--
 -- AUTO_INCREMENT for table `status_kepegawaian`
 --
 ALTER TABLE `status_kepegawaian`
@@ -644,6 +719,13 @@ ALTER TABLE `status_kepegawaian`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `data_anggota_perjadin`
+--
+ALTER TABLE `data_anggota_perjadin`
+  ADD CONSTRAINT `id_perjalanan_dinas_ap_pd` FOREIGN KEY (`id_perjalanan_dinas`) REFERENCES `data_perjalanan_dinas` (`id_perjalanan_dinas`),
+  ADD CONSTRAINT `nip_anggota_perjadin_ap_peg` FOREIGN KEY (`nip_anggota_perjadin`) REFERENCES `data_pegawai` (`nip`);
 
 --
 -- Constraints for table `data_kegiatan`
@@ -684,6 +766,13 @@ ALTER TABLE `data_perjalanan_dinas`
   ADD CONSTRAINT `nip_ppk_dpd_peg` FOREIGN KEY (`nip_ppk`) REFERENCES `data_pegawai` (`nip`),
   ADD CONSTRAINT `nip_pumk_nip` FOREIGN KEY (`nip_pumk`) REFERENCES `data_pegawai` (`nip`),
   ADD CONSTRAINT `nip_verifikator_dpd_peg` FOREIGN KEY (`nip_verifikator`) REFERENCES `data_pegawai` (`nip`);
+
+--
+-- Constraints for table `detail_tugas`
+--
+ALTER TABLE `detail_tugas`
+  ADD CONSTRAINT `id_tugas_det_tug` FOREIGN KEY (`id_tugas`) REFERENCES `data_tugas` (`id_tugas`),
+  ADD CONSTRAINT `nip_det_tug_peg` FOREIGN KEY (`nip`) REFERENCES `data_pegawai` (`nip`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
