@@ -19706,6 +19706,7 @@ code {
 .footer {
   background: #f7fff7;
   padding: 30px 2.45rem;
+  width: 2000px;
   transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   -webkit-transition: all 0.25s ease;

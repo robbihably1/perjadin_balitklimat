@@ -19,7 +19,6 @@ class Dashboard extends CI_Controller {
         $this->load->view('templates/v_template',$data);
 		$this->load->view('templates/v_dashboard',$data);
         $this->load->view('templates/footer',$data);
-		
     }
     public function logout(){
 		$data = array(
