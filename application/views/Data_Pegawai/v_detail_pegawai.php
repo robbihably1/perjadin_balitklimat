@@ -59,15 +59,6 @@
                                                     <td><?php echo $detail->no_whatsapp ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Tugas Tambahan</th>
-                                                    <td>
-                                                        <?php if ($detail->admin == "Iya") : ?> Admin, <?php endif; ?>
-                                                        <?php if ($detail->pumk == "Iya") : ?> PUMK, <?php endif; ?>
-                                                        <?php if ($detail->kpa == "Iya") : ?> KPA, <?php endif; ?>
-                                                        <?php if ($detail->pj == "Iya") : ?> PJ, <?php endif; ?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
                                                     <th></th>
                                                     <td></td>
                                                 </tr>

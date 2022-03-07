@@ -16,19 +16,19 @@
                                     <div class="card">
                                         <!-- <div class="card-body"> -->
                                         <div class="table-responsive pt-3 ">
-                                        <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" style="width:145%; height:100%">
+                                        <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" style="width:100%; height:100%">
                                                 <thead class="thead-light">
                                                     <tr>
-                                                        <th style="width:8%" title="kode kegiatan">Kode Kegiatan</th>
+                                                        <th title="kode kegiatan">Kode Kegiatan</th>
                                                         <th title="Judul kegiatan">Judul Kegiatan</th>
                                                         <th title="Jenis kegiatan">Jenis Kegiatan</th>
-                                                        <th style="width:9%" title="Tahun">Tahun</th>
+                                                        <th title="Tahun">Tahun</th>
                                                         <!-- <th>NIP PJ Kegiatan</th> -->
                                                         <!-- <th>NIP PJ RPTP/RDHP/RKTM</th> -->
                                                         <th title="PJ RPTP/RDHP/RKTM">PJ RPTP / RDHP / RKTM</th>
                                                         <th title="PJ kegiatan">Kasub / Kasie / Ka.Kelti</th>
                                                         <th title="Total Pengeluaran">Total Pengeluaran</th>
-                                                        <th style="width:8%">Aksi</th>
+                                                        <th>Aksi</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>

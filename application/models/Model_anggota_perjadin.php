@@ -132,8 +132,8 @@ class Model_anggota_perjadin extends CI_model
 	}
 	public function anggotaCheck($nip_anggota_perjadin){
 		$hue = $this->db->where('nip_anggota_perjadin', $nip_anggota_perjadin)
-		->where('status_perjalanan_dinas', 'Belum Berangkat')
-		->or_where('status_perjalanan_dinas', 'Sedang Berlangsung')->get('data_anggota_perjadin');
+		->where('status_perjalanan_dinas!=', 'Selesai' )
+		->get('data_anggota_perjadin');
 		if($hue->num_rows() == 0){
 			return true;
 		}else{

@@ -56,11 +56,7 @@ class Data_Pegawai extends CI_Controller
             'nik' => $this->input->post('nik'),
             'email' => $this->input->post('email'),
             'password' => $this->input->post('password'),
-            'no_whatsapp' => $this->input->post('62') . $this->input->post('no_whatsapp'),
-            'admin' => $this->input->post('admin'),
-            'pumk' => $this->input->post('pumk'),
-            'kpa' => $this->input->post('kpa'),
-            'pj' => $this->input->post('pj'),
+            'no_whatsapp' => $this->input->post('62') . $this->input->post('no_whatsapp')
         );
 
         if ($this->Model_pegawai->input_data($data, 'data_pegawai')) {
@@ -106,11 +102,7 @@ class Data_Pegawai extends CI_Controller
             'nik' => $this->input->post('nik'),
             'email' => $this->input->post('email'),
             'password' => $this->input->post('password'),
-            'no_whatsapp' => $this->input->post('62') . $this->input->post('no_whatsapp'),
-            'admin' => $this->input->post('admin'),
-            'pumk' => $this->input->post('pumk'),
-            'kpa' => $this->input->post('kpa'),
-            'pj' => $this->input->post('pj'),
+            'no_whatsapp' => $this->input->post('62') . $this->input->post('no_whatsapp')
         );
         $where = array(
             'nip'   => $nip,

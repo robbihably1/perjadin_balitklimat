@@ -29,27 +29,27 @@
                                             <table class="table table-no-bordered">
                                                 <tr>
                                                     <th>Nama Pegawai</th>
-                                                    <td><?php echo $data_pegawai['nama_pegawai'] ?></td>
+                                                    <td><input type="text" readonly class="form-control" value="<?php echo $data_pegawai['nama_pegawai'] ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Jabatan</th>
-                                                    <td><?php echo $data_pegawai['jabatan'] ?></td>
+                                                    <td><input type="text" readonly class="form-control" value="<?php echo $data_pegawai['jabatan'] ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Divisi</th>
-                                                    <td><?php echo $data_pegawai['divisi'] ?></td>
+                                                    <td><input type="text" readonly class="form-control" value="<?php echo $data_pegawai['divisi'] ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Golongan</th>
-                                                    <td><?php echo ($data_pegawai['golongan']) ?></td>
+                                                    <td><input type="text" readonly class="form-control" value="<?php echo ($data_pegawai['golongan']) ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Pangkat</th>
-                                                    <td><?php echo ($data_pegawai['pangkat']) ?></td>
+                                                    <td><input type="text" readonly class="form-control" value="<?php echo ($data_pegawai['pangkat']) ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Email</th>
-                                                    <td><?php echo $data_pegawai['email'] ?></td>
+                                                    <td><input type="text" readonly class="form-control" value="<?php echo $data_pegawai['email'] ?>"></td>
                                                 </tr>
                                                 <tr>
                                                     <th>

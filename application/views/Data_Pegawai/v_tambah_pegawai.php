@@ -8,8 +8,9 @@
                         <div class="col-md-12 grid-margin">
                             <div class="card-body">
                                 <form enctype="multipart/form-data" method="POST" action="<?php echo base_url('data_pegawai/tambah_aksi') ?>">
-                                <!-- <input type="hidden" name="<?php //echo $this->security->get_csrf_token_name()?>" value="<?php echo $this->security->get_csrf_hash();?>">     -->
-                                <div class="form-group">
+                                    <!-- <input type="hidden" name="<?php //echo $this->security->get_csrf_token_name()
+                                                                    ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">     -->
+                                    <div class="form-group">
                                         <label><b>Nama Pegawai</b></label>
                                         <input type="text" name="nama_pegawai" class="form-control" required>
                                         <input type="hidden" name="foto" value="default.png" class="form-control" required>
@@ -19,7 +20,7 @@
                                         <label><b>NIP</b></label>
                                         <input type="text" name="nip" class="form-control" required>
                                         <?php echo form_error('nip', '<div class="text-small text-danger"></div>') ?>
-                                    </div>                                    
+                                    </div>
                                     <div class="form-group">
                                         <label><b>Golongan</b></label></br>
                                         <select name="id_golongan" id="golongan" class="form-control" required>
@@ -95,104 +96,18 @@
                                             <input type="text" name="no_whatsapp" placeholder="Nomor Whatsapp" class="form-control" required>
                                             <?php echo form_error('no_whatsapp', '<div class="text-small text-danger"></div>') ?>
                                         </div>
-                                    </div><br>
-
-                                        <div class="form-group row">
-                                            <label style="margin-top:-7px;" class="col-sm-3 col-form-label"><b>Admin</b></label>
-                                            <div style="margin-left:-150px;" class="col-sm-2">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="admin" id="admin" value="Iya">
-                                                        Iya
-                                                    </label>
-                                                    <?php echo form_error('admin', '<div class="text-small text-danger"></div>') ?>
-                                                </div>
-                                            </div>
-                                            <div style="margin-left:-100px;" class="col-sm-5">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="admin" id="admin" value="Tidak">
-                                                        Tidak
-                                                    </label>
-                                                    <?php echo form_error('admin', '<div class="text-small text-danger"></div>') ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label style="margin-top:-7px;" class="col-sm-3 col-form-label"><b>PUMK</b></label>
-                                            <div style="margin-left:-150px;" class="col-sm-2">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="pumk" id="pumk" value="Iya">
-                                                        Iya
-                                                    </label>
-                                                    <?php echo form_error('pumk', '<div class="text-small text-danger"></div>') ?>
-                                                </div>
-                                            </div>
-                                            <div style="margin-left:-100px;" class="col-sm-5">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="pumk" id="pumk" value="Tidak">
-                                                        Tidak
-                                                    </label>
-                                                    <?php echo form_error('pumk', '<div class="text-small text-danger"></div>') ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label style="margin-top:-7px;" class="col-sm-3 col-form-label"><b>KPA</b></label>
-                                            <div style="margin-left:-150px;" class="col-sm-2">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="kpa" id="kpa" value="Iya">
-                                                        Iya
-                                                    </label>
-                                                    <?php echo form_error('kpa', '<div class="text-small text-danger"></div>') ?>
-                                                </div>
-                                            </div>
-                                            <div style="margin-left:-100px;" class="col-sm-5">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="kpa" id="kpa" value="Tidak">
-                                                        Tidak
-                                                    </label>
-                                                    <?php echo form_error('kpa', '<div class="text-small text-danger"></div>') ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    
-                                        <div class="form-group row">
-                                            <label style="margin-top:-7px;" class="col-sm-3 col-form-label"><b>PJ</b></label>
-                                            <div style="margin-left:-150px;" class="col-sm-2">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="pj" id="pj" value="Iya">
-                                                        Iya
-                                                    </label>
-                                                    <?php echo form_error('pj', '<div class="text-small text-danger"></div>') ?>
-                                                </div>
-                                            </div>
-                                            <div style="margin-left:-100px;" class="col-sm-5">
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="pj" id="pj" value="Tidak">
-                                                        Tidak
-                                                    </label>
-                                                    <?php echo form_error('pj', '<div class="text-small text-danger"></div>') ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <button type="submit" class="btn btn-success">Submit</a></button>&nbsp &nbsp
                                     </div>
-                            </div>
+
+                            <button type="submit" class="btn btn-success">Submit</a></button>&nbsp &nbsp
                         </div>
                     </div>
                 </div>
-                </form>
             </div>
         </div>
+        </form>
     </div>
+</div>
+</div>
 </div>
 </div>
 </div>

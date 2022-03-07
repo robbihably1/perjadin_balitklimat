@@ -32,8 +32,8 @@
                                             <td><?php echo $no++ ?></td>
                                             <td><?php echo $p->jenis_keg ?></td>
                                         <td>
-                                            <a title="Edit data jenis kegiatan"  class="btn btn-sm btn-success" href="<?php echo base_url('/jenis_keg/edit/' . $p->id_jenis_keg) ?>"><i class="mdi mdi-pencil"></i></a>
-                                            <a title="Hapus data jenis kegiatan"  id="hapus_keg" class="btn btn-sm btn-danger" href="<?php echo site_url('/jenis_keg/hapus/' . $p->id_jenis_keg) ?>"><i class="mdi mdi-trash-can"></i></a>
+                                            <a style="font-size:30px;width:45%" title="Edit data jenis kegiatan"  class="btn btn-sm btn-success" href="<?php echo base_url('/jenis_keg/edit/' . $p->id_jenis_keg) ?>"><i class="mdi mdi-pencil"></i></a>
+                                            <a style="font-size:30px;width:45%" title="Hapus data jenis kegiatan"  id="hapus_keg" class="btn btn-sm btn-danger" href="<?php echo site_url('/jenis_keg/hapus/' . $p->id_jenis_keg) ?>"><i class="mdi mdi-trash-can"></i></a>
                                         </td>
                                         </tr>
                                         <?php } ?>

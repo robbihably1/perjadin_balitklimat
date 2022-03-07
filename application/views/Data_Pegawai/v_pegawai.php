@@ -17,7 +17,7 @@
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="table-responsive pt-8 ">
-                                                    <table id="dtBasicExample" class="table table-striped table-bordered table-md" style="width:140%">
+                                                    <table id="dtBasicExample" class="table table-striped table-bordered table-md" style="width:100%">
                                                         <!-- <table  id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" height='50%'> -->
                                                         <thead class="thead-light">
                                                             <tr>
@@ -30,7 +30,6 @@
                                                                 <th style="width:4%">Jabatan</th>
                                                                 <th style="width:10%">Golongan</th>
                                                                 <th style="width:4%">Divisi</th>
-                                                                <th style="width:4%">Tugas Tambahan</th>
                                                                 <!-- <th style="width:4%">KPA</th>
                                                                 <th style="width:4%">Admin</th>
                                                                 <th style="width:4%">PPK</th>
@@ -54,11 +53,6 @@
                                                                     <td><?php echo $dp->jabatan;?></td>
                                                                     <td><?php echo $dp->golongan;?></td>
                                                                     <td><?php echo $dp->divisi;?></td>
-                                                                    <td>
-                                                                    <?php if($dp->admin == "Iya"):?> Admin, <?php endif; ?>
-                                                                    <?php if($dp->pumk == "Iya"):?> PUMK, <?php endif; ?>
-                                                                    <?php if($dp->kpa == "Iya"):?> KPA, <?php endif; ?>
-                                                                    <?php if($dp->pj == "Iya"):?> PJ, <?php endif; ?>
                                                                     <td>
                                                                         <a title="Detail data pegawai" style="color:#ffffff" class="btn btn-sm btn-warning" href="<?php echo base_url('data_pegawai/detail/' . $dp->nip) ?>"><i class="mdi mdi-account-card-details"></i></a>
                                                                         <a title="Edit data pegawai"  class="btn btn-sm btn-success" href="<?php echo base_url() ?>data_pegawai/edit?nip=<?php echo $dp->nip?>"><i class="mdi mdi-pencil"></i></a>

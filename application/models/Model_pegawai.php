@@ -66,6 +66,16 @@ class Model_pegawai extends CI_model
 		$this->db->join('data_jabatan', 'data_pegawai.id_jabatan=data_jabatan.id_jabatan');
 		return $this->db->where('jabatan','Pejabat Pembuat Komitmen')->get()->result();
 	}
+	public function getListPj()
+	{
+		$this->db->select('*');
+		$this->db->from('detail_tugas');
+		$this->db->join('data_pegawai', 'data_pegawai.nip=detail_tugas.nip');
+		$this->db->join('data_tugas', 'data_tugas.id_tugas=detail_tugas.id_tugas');
+		$this->db->where('penugasan','PJ RPTP');
+		$this->db->or_where('penugasan','PJ RDHP');
+		return $this->db->or_where('penugasan','PJ RKTM')->get()->result();
+	}
 	public function getListBendahara()
 	{
 		$this->db->select('*');
@@ -76,7 +86,11 @@ class Model_pegawai extends CI_model
 	}
 	public function getListKPA()
 	{
-		return $query = $this->db->where('kpa', 'Iya')->order_by('nip', 'ASC')->get('data_pegawai')->result();
+		$this->db->select('*');
+		$this->db->from('detail_tugas');
+		$this->db->join('data_pegawai', 'data_pegawai.nip=detail_tugas.nip');
+		$this->db->join('data_tugas', 'data_tugas.id_tugas=detail_tugas.id_tugas');
+		return $this->db->where('penugasan','Kuasa Pengguna Anggaran')->get()->result();
 	}
 	public function getListPltBalai()
 	{

@@ -46,7 +46,7 @@
                                         <label><b>PJ RPTP / RDHP / RKTM</b></label></br>
                                         <select name="nip_pj_rrr" id="nip_pj_rrr" class="form-control" required>
                                             <option value="">--Pilih PJ RPTP / RDHP / RKTM--</option>
-                                            <?php foreach ($nip as $row) { ?>
+                                            <?php foreach ($nip_pj as $row) { ?>
                                                 <option value="<?php echo $row->nip; ?>"><?php echo $row->nip." | ".$row->nama_pegawai; ?></option>';
                                                 }
                                             <?php } ?>
