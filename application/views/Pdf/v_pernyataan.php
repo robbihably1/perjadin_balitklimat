@@ -53,14 +53,14 @@
             <p style="text-align:left;margin-top:450px;margin-left:430px;width:92%;position:absolute;z-index:0">................, .....................................
             <p style="text-align:left;margin-top:470px;margin-left:430px;width:92%;position:absolute;z-index:1">Pejabat Negara/Pegawai Negeri
             <p style="text-align:left;margin-top:490px;margin-left:430px;width:92%;position:absolute;z-index:2">Yang melakukan Perjalanan Dinas,
-            <p style="text-align:left;margin-top:600px;margin-left:430px;width:92%;position:absolute;z-index:3"><?php echo $p->nama_kb ?></b>
-            <p style="text-align:left;margin-top:630px;margin-left:430px;width:92%;position:absolute;z-index:4">NIP.<?php echo ' ' . $p->nip_kb ?>
+            <p style="text-align:left;margin-top:600px;margin-left:430px;width:92%;position:absolute;z-index:3"><?php echo $p->nama_pegawai ?></b>
+            <p style="text-align:left;margin-top:630px;margin-left:430px;width:92%;position:absolute;z-index:4">NIP.<?php echo ' ' . $p->nip ?>
 
             <p style="text-align:left;margin-top:450px;margin-left:50px;width:92%;position:absolute;z-index:0">Mengetahui/Menyetujui:
             <p style="text-align:left;margin-top:470px;margin-left:50px;width:92%;position:absolute;z-index:1">An. Kuasa Pengguna Anggaran
             <p style="text-align:left;margin-top:490px;margin-left:50px;width:92%;position:absolute;z-index:2">Pejabat Pembuat Komitmen
-            <p style="text-align:left;margin-top:600px;margin-left:50px;width:92%;position:absolute;z-index:3"><?php echo $p->nama_kb ?>
-            <p style="text-align:left;margin-top:630px;margin-left:50px;width:92%;position:absolute;z-index:4">NIP.<?php echo ' ' . $p->nip_kb ?>
+            <p style="text-align:left;margin-top:600px;margin-left:50px;width:92%;position:absolute;z-index:3"><?php echo $p->nama_ppk ?>
+            <p style="text-align:left;margin-top:630px;margin-left:50px;width:92%;position:absolute;z-index:4">NIP.<?php echo ' ' . $p->nip_ppk ?>
             <table id="table" class="table table-bordered table-sm" style="width:92%;margin-left:30px;color:black;margin-top:85px;">
                 <!-- <table  id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" height='50%'> -->
                 <thead>
