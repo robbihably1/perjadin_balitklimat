@@ -29,5 +29,11 @@ class Pdf extends CI_Controller
         $data['isi_surat'] = $this->Model_pdf->getListTableSt2($id_perjalanan_dinas);
         $this->load->view('Pdf/v_surat_tugas_plt', $data);
     }
+    function pernyataan($id_anggota_perjadin)
+    {
+        $data['header'] = $this->Model_pdf->getHeader();
+        $data['isi_surat'] = $this->Model_pdf->getListPernyataan($id_anggota_perjadin);
+        $this->load->view('Pdf/v_pernyataan', $data);
+    }
 }
 // tes perubahan 3

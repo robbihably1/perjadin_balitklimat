@@ -95,7 +95,7 @@
                                                                                                     <a class="dropdown-item" href="#"><b>- Capsah-PNS(1)</a>
                                                                                                     <a class="dropdown-item" href="#"><b>- Capsah-PNS(2)</a>
                                                                                                     <a class="dropdown-item" href="#"><b>- Kuitansi</a>
-                                                                                                    <a class="dropdown-item" href="#"><b>- Pernyataan</a>
+                                                                                                    <a class="dropdown-item" href="<?php echo base_url('pdf/pernyataan/' . $d->id_anggota_perjadin) ?>"><b>- Pernyataan</a>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </td>

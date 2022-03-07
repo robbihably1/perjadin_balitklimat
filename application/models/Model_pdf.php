@@ -46,6 +46,19 @@ class Model_pdf extends CI_model
 		$this->db->join('data_golongan as anggota_golongan', 'anggota_golongan.id_golongan = anggota.id_golongan');
         return $this->db->get()->result();
     }
+    public function getListPernyataan($id_anggota_perjadin)
+    {
+        //return $query = $this->db->order_by('id_data_kegiatan', 'ASC')->get('data_kegiatan')->result();
+        $this->db->select('data_anggota_perjadin.*,jabatan_anggota.*,data_perjalanan_dinas.*,anggota.nama_pegawai as nama_pegawai,anggota.nip as nip,anggota_golongan.golongan 
+        as golongan');
+        $this->db->from('data_anggota_perjadin');
+        $this->db->where('data_anggota_perjadin.id_anggota_perjadin', $id_anggota_perjadin);
+        $this->db->join('data_perjalanan_dinas', 'data_anggota_perjadin.id_perjalanan_dinas = data_perjalanan_dinas.id_perjalanan_dinas');
+	    $this->db->join('data_pegawai as anggota', 'anggota.nip = data_anggota_perjadin.nip_anggota_perjadin');
+	    $this->db->join('data_jabatan as jabatan_anggota', 'jabatan_anggota.id_jabatan = anggota.id_jabatan');
+		$this->db->join('data_golongan as anggota_golongan', 'anggota_golongan.id_golongan = anggota.id_golongan');
+        return $this->db->get()->row();
+    }
     public function getHeader()
     {
         return $this->db->where('id_header_surat', $this->id_header_surat)->get('data_header_surat')->row();
