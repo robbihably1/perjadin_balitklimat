@@ -40,4 +40,9 @@ body {
       background: initial;
       page-break-after: always;
     }
+    .hrvertical {
+      border-left: 10px;
+      height: 500px;
+      margin-left: 100px;
+    }
   }
