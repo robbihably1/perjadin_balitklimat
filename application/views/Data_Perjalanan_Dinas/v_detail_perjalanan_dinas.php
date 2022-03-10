@@ -4,7 +4,11 @@
             <div class="col-md-12 grid-margin">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h3 class="m-0 font-weight-bold text-primary">Detail Perjalanan Dinas</h3><br>
+                    <a title="Kembali"
+                                    class="btn btn-sm btn-success" style="border-radius:90px; color:white"
+                                    href="<?php echo site_url('perjalanan_dinas') ?>"><i class="ti ti-arrow-left"
+                                        style="border-radius:8px"></i></a>
+                        <br><br><h3 class="m-0 font-weight-bold text-primary">Detail Perjalanan Dinas</h3><br>
                         <div class="col-md-12 grid-margin">
                             <div class="card shadow p-5 md-12">
                                 <div class="col-lg-12 grid-margin stretch-card">
