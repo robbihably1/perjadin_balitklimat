@@ -16,13 +16,13 @@
                                             <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" style="width:100%; height:100%">
                                                 <thead class="thead-light">
                                                     <tr>
-                                                        <th style="width:3%">Nama</th>
-                                                        <th style="width:3%">NIP</th>
-                                                        <th style="width:3%">Pangkat</th>
-                                                        <th style="width:3%">Golongan</th>
-                                                        <th style="width:3%">Jumlah Perjalanan</th>
-                                                        <th style="width:3%">Total Hari</th>
-                                                        <th style="width:3%">Estimasi Pendapatan</th>
+                                                        <th title="Nama" style="width:3%"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Nama</label></th>
+                                                        <th title="NIP" style="width:3%"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">NIP</label></th>
+                                                        <th title="Pangkat" style="width:3%"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Pangkat</label></th>
+                                                        <th title="Golongan" style="width:3%"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Golongan</label></th>
+                                                        <th title="Jumlah Perjalanan" style="width:3%"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Jumlah Perjalanan</label></th>
+                                                        <th title="Total Hari" style="width:3%"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Total Hari</label></th>
+                                                        <th title="Estimasi Pendapatan" style="width:3%"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Estimasi Pendapatan</label></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -31,21 +31,21 @@
                                                     ?>
 
                                                         <tr>
-                                                             <td style="font-size: 12px;heigth:40px"><label style="margin-top:5px"><?php echo $j->nama_anggota_perjadin ?></label></td>
-                                                             <td style="font-size: 12px;"><?php echo $j->nip_anggota_perjadin ?></td>
-                                                             <td style="font-size: 12px;"><?php echo $j->pangkat_anggota ?></td>
-                                                             <td style="font-size: 12px;"><?php echo $j->golongan_anggota ?></td>
-                                                             <td style="font-size: 12px;"><?php echo
-                                                                $this->db->select('*')->from('data_anggota_perjadin')->where('nip_anggota_perjadin =', $j->nip_anggota_perjadin)->get()->num_rows(); ?>
+                                                            <td style="font-size: 12px;heigth:40px"><label style="margin-top:5px"><?php echo $j->nama_anggota_perjadin ?></label></td>
+                                                            <td style="font-size: 12px;"><?php echo $j->nip_anggota_perjadin ?></td>
+                                                            <td style="font-size: 12px;"><?php echo $j->pangkat_anggota ?></td>
+                                                            <td style="font-size: 12px;"><?php echo $j->golongan_anggota ?></td>
+                                                            <td style="font-size: 12px;"><?php echo
+                                                                                            $this->db->select('*')->from('data_anggota_perjadin')->where('nip_anggota_perjadin =', $j->nip_anggota_perjadin)->get()->num_rows(); ?>
                                                             </td>
-                                                             <td style="font-size: 12px;"><?php echo
-                                                                $this->db->select_sum('lama_perjalanan')->from('data_anggota_perjadin')
-                                                                    ->where('nip_anggota_perjadin =', $j->nip_anggota_perjadin)
-                                                                    ->join('data_perjalanan_dinas', 'data_anggota_perjadin.id_perjalanan_dinas = data_perjalanan_dinas.id_perjalanan_dinas')
-                                                                    ->get()->row()->lama_perjalanan; ?>
+                                                            <td style="font-size: 12px;"><?php echo
+                                                                                            $this->db->select_sum('lama_perjalanan')->from('data_anggota_perjadin')
+                                                                                                ->where('nip_anggota_perjadin =', $j->nip_anggota_perjadin)
+                                                                                                ->join('data_perjalanan_dinas', 'data_anggota_perjadin.id_perjalanan_dinas = data_perjalanan_dinas.id_perjalanan_dinas')
+                                                                                                ->get()->row()->lama_perjalanan; ?>
                                                             </td>
-                                                             <td style="font-size: 12px;"><?php echo 'Rp' . number_format($this->db->select_sum('total_pendapatan')->from('data_anggota_perjadin')
-                                                                    ->where('nip_anggota_perjadin =', $j->nip_anggota_perjadin)->get()->row()->total_pendapatan, 0, ',', '.') ?>
+                                                            <td style="font-size: 12px;"><?php echo 'Rp' . number_format($this->db->select_sum('total_pendapatan')->from('data_anggota_perjadin')
+                                                                                                ->where('nip_anggota_perjadin =', $j->nip_anggota_perjadin)->get()->row()->total_pendapatan, 0, ',', '.') ?>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
