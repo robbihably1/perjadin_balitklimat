@@ -16,14 +16,16 @@
                                     <div class="card">
                                         <!-- <div class="card-body"> -->
                                         <div class="table-responsive pt-3 ">
-                                        <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" style="width:100%; height:100%">
+                                            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" style="width:100%; height:100%">
                                                 <thead class="thead-light">
                                                     <tr>
-                                                        <th>Kode MAK</th>
-                                                        <th>PAGU</th>
-                                                        <th>Tahun</th>
-                                                        <th>Anggaran</th>
-                                                        <th style="width:10%">Aksi</th>
+                                                        <th title="kode MAK"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Kode MAK</label></th>
+                                                        <th title="PAGU"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">PAGU</label></th>
+
+                                                        <th title="Tahun"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Tahun</label></th>
+                                                        <th title="Anggaran"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Anggaran</label></th>
+
+                                                        <th style="width:1%;"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;margin-left:25px;color:gray">Aksi</label></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -32,13 +34,13 @@
                                                     foreach ($data_mak as $m) {
                                                     ?>
                                                         <tr>
-                                                            <td><?php echo $m->kode_mak ?></td>
-                                                            <td><?php echo $m->judul_mak ?></td>
-                                                            <td><?php echo $m->tahun ?></td>
-                                                            <td><?php echo 'Rp'.number_format($m->banyak_anggaran,0,',','.') ?></td>
-                                                            <td>
-                                                                <a title="Edit data mak"  class="btn btn-sm btn-success" href="<?php echo base_url('/mak/edit/' . $m->kode_mak) ?>"><i class="mdi mdi-pencil"></i></a>
-                                                                <a title="Hapus data mak"  id="hapus_mak" class="btn btn-sm btn-danger" href="<?php echo site_url('/mak/hapus/' . $m->kode_mak) ?>"><i class="mdi mdi-trash-can"></i></a>
+                                                            <td style="font-size: 12px;"><?php echo $m->kode_mak ?></td>
+                                                            <td style="font-size: 12px;"><?php echo $m->judul_mak ?></td>
+                                                            <td style="font-size: 12px;"><?php echo $m->tahun ?></td>
+                                                            <td style="font-size: 12px;"><?php echo 'Rp' . number_format($m->banyak_anggaran, 0, ',', '.') ?></td>
+                                                            <td style="font-size: 12px;">
+                                                                <a style="height:35px;" title="Edit data mak" class="btn btn-xs btn-success" href="<?php echo base_url('/mak/edit/' . $m->kode_mak) ?>"><i class="mdi mdi-pencil"></i></a>
+                                                                <a style="height:35px;" title="Hapus data mak" id="hapus_mak" class="btn btn-xs btn-danger" href="<?php echo site_url('/mak/hapus/' . $m->kode_mak) ?>"><i class="mdi mdi-trash-can"></i></a>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
@@ -53,4 +55,4 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>

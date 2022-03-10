@@ -18,9 +18,9 @@
                                 <table id="datatable" class="table table-striped table-bordered table-md" cellspacing="0" style="width:100%; height:100%">
                                     <thead  class="thead-light">
                                         <tr>
-                                        <th style="width:10%">No</th>
-                                        <th>Jenis Kegiatan</th>
-                                        <th style="width:10%">Aksi</th>
+                                        <th style="font-size: 12px;width:10%;color:gray">No</th>
+                                         <th style="font-size: 12px;color:gray">Jenis Kegiatan</th>
+                                        <th style="width:10%;font-size: 12px;color:gray">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -28,12 +28,12 @@
                                         $no = 1;
                                         foreach ($data_jenis_keg as $p) {
                                         ?>
-                                        <tr>
-                                            <td><?php echo $no++ ?></td>
-                                            <td><?php echo $p->jenis_keg ?></td>
-                                        <td>
-                                            <a style="font-size:30px;width:45%" title="Edit data jenis kegiatan"  class="btn btn-sm btn-success" href="<?php echo base_url('/jenis_keg/edit/' . $p->id_jenis_keg) ?>"><i class="mdi mdi-pencil"></i></a>
-                                            <a style="font-size:30px;width:45%" title="Hapus data jenis kegiatan"  id="hapus_keg" class="btn btn-sm btn-danger" href="<?php echo site_url('/jenis_keg/hapus/' . $p->id_jenis_keg) ?>"><i class="mdi mdi-trash-can"></i></a>
+                                        <tr >
+                                             <td style="font-size: 12px;"><?php echo $no++ ?></td>
+                                             <td style="font-size: 12px;"><?php echo $p->jenis_keg ?></td>
+                                         <td style="font-size: 12px;">
+                                            <a style="font-size:20px;width:45%" title="Edit data jenis kegiatan"  class="btn btn-sm btn-success" href="<?php echo base_url('/jenis_keg/edit/' . $p->id_jenis_keg) ?>"><i class="mdi mdi-pencil"></i></a>
+                                            <a style="font-size:20px;width:45%" title="Hapus data jenis kegiatan"  id="hapus_keg" class="btn btn-sm btn-danger" href="<?php echo site_url('/jenis_keg/hapus/' . $p->id_jenis_keg) ?>"><i class="mdi mdi-trash-can"></i></a>
                                         </td>
                                         </tr>
                                         <?php } ?>

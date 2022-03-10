@@ -16,19 +16,19 @@
                                     <div class="card">
                                         <!-- <div class="card-body"> -->
                                         <div class="table-responsive pt-3 ">
-                                        <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" style="width:100%; height:100%">
+                                        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" style="width:100%; height:100%">
                                                 <thead class="thead-light">
                                                     <tr>
-                                                        <th title="kode kegiatan">Kode Kegiatan</th>
-                                                        <th title="Judul kegiatan">Judul Kegiatan</th>
-                                                        <th title="Jenis kegiatan">Jenis Kegiatan</th>
-                                                        <th title="Tahun">Tahun</th>
+                                                        <th title="kode kegiatan"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Kode Kegiatan</label></th>
+                                                        <th title="kode kegiatan"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Judul Kegiatan</label></th>
+                                                        <th title="kode kegiatan"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Jenis Kegiatan</label></th>
+                                                        <th title="kode kegiatan"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Tahun</label></th>
                                                         <!-- <th>NIP PJ Kegiatan</th> -->
                                                         <!-- <th>NIP PJ RPTP/RDHP/RKTM</th> -->
-                                                        <th title="PJ RPTP/RDHP/RKTM">PJ RPTP / RDHP / RKTM</th>
-                                                        <th title="PJ kegiatan">Kasub / Kasie / Ka.Kelti</th>
-                                                        <th title="Total Pengeluaran">Total Pengeluaran</th>
-                                                        <th>Aksi</th>
+                                                        <th title="kode kegiatan"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">PJ RPTP / RDHP / RKTM</label></th>
+                                                        <th title="kode kegiatan"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Kasub / Kasie / Ka.Kelti</label></th>
+                                                        <th title="kode kegiatan"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;color:gray">Total Pengeluaran</label></th>
+                                                        <th style="width:1%;"><label style="width:100%;height:100%;margin-top:10px" type="button" class="btn-xs"><label style="margin-top:10px;margin-left:25px;color:gray">Aksi</label></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -36,18 +36,18 @@
                                                     foreach ($data_kegiatan as $j) {
                                                     ?>
                                                         <tr>
-                                                            <td><?php echo $j->kode_kegiatan ?></td>
-                                                            <td><?php echo $j->judul_kegiatan ?></td>
-                                                            <td><?php echo $j->jenis_keg ?></td>
-                                                            <td><?php echo $j->tahun ?></td>
-                                                            <!-- <td><?php //echo $j->nip_pj_kegiatan ?></td> -->
-                                                            <!-- <td><?php //echo $j->nip_pj_rrr ?></td> -->
-                                                            <td><?php echo $j->nama_pj_rrr ?></td>
-                                                            <td><?php echo $j->nama_pj_keg ?></td>
-                                                            <td><?php echo 'Rp'.number_format($j->biaya_pengeluaran,0,',','.') ?></td>
-                                                            <td>
-                                                                <a title="Edit data kegiatan"  class="btn btn-sm btn-success" href="<?php echo base_url() ?>kegiatan/edit?kode_kegiatan=<?php echo $j->kode_kegiatan?>"><i class="mdi mdi-pencil"></i></a>
-                                                                <a title="Hapus data kegiatan"  id="hapus_kegiatan" class="btn btn-sm btn-danger" href="<?php echo site_url('/kegiatan/hapus/' . $j->kode_kegiatan) ?>"><i class="mdi mdi-trash-can"></i></a>
+                                                            <td style="font-size: 12px;"><?php echo $j->kode_kegiatan ?></td>
+                                                            <td style="font-size: 12px;"><?php echo $j->judul_kegiatan ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->jenis_keg ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->tahun ?></td>
+                                                            <!--  <td style="font-size: 12px;"><?php //echo $j->nip_pj_kegiatan ?></td> -->
+                                                            <!--  <td style="font-size: 12px;"><?php //echo $j->nip_pj_rrr ?></td> -->
+                                                             <td style="font-size: 12px;"><?php echo $j->nama_pj_rrr ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->nama_pj_keg ?></td>
+                                                             <td style="font-size: 12px;"><?php echo 'Rp'.number_format($j->biaya_pengeluaran,0,',','.') ?></td>
+                                                             <td style="font-size: 12px;">
+                                                                <a style="height: 35px;" title="Edit data kegiatan"  class="btn btn-xs btn-success" href="<?php echo base_url() ?>kegiatan/edit?kode_kegiatan=<?php echo $j->kode_kegiatan?>"><i class="mdi mdi-pencil"></i></a>
+                                                                <a style="height: 35px;" title="Hapus data kegiatan"  id="hapus_kegiatan" class="btn btn-xs btn-danger" href="<?php echo site_url('/kegiatan/hapus/' . $j->kode_kegiatan) ?>"><i class="mdi mdi-trash-can"></i></a>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>

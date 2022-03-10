@@ -17,7 +17,7 @@
             <div class="card card-tale">
               <div class="card-body">
                 <p class="mb-4">Total perjalanan dinas:</p><br>
-                <p class="fs-30 mb-2">
+                <p class="fs-30 mb-2"style="font-size:25px">
                   <?php echo
                   $this->db->select('*')->from('data_perjalanan_dinas')->get()->num_rows();
                   ?></p>
@@ -28,7 +28,7 @@
             <div class="card card-light-danger">
               <div class="card-body">
                 <p class="mb-4">Total pegawai yang sedang dalam perjalanan dinas: </p>
-                <p class="fs-30 mb-2"><?php echo
+                <p class="fs-30 mb-2"style="font-size:25px"><?php echo
                                       $this->db->select('*')->from('data_anggota_perjadin')->where('status_perjalanan_dinas =', 'Sedang Berlangsung')->get()->num_rows();
                                       ?></p>
                 </p>
@@ -43,7 +43,7 @@
             <div class="card card-light-blue">
               <div class="card-body">
                 <p class="mb-4">Total pengeluaran:</p><br>
-                <p class="fs-30 mb-2"><?php 
+                <p class="fs-30 mb-2" style="font-size:25px"><?php 
                                        $biaya= $this->db->select_sum('biaya_pengeluaran')->from('data_kegiatan')
                                         ->get()->row()->biaya_pengeluaran; 
                                         echo 'Rp' . number_format($biaya, 0, ',', '.') ?>
@@ -55,7 +55,7 @@
             <div class="card card-dark-blue">
               <div class="card-body">
                 <p class="mb-4">Total sisa anggaran:</p><br>
-                <p class="fs-30 mb-2"><?php 
+                <p class="fs-30 mb-2"style="font-size:25px"><?php 
                                        $anggaran= $this->db->select_sum('banyak_anggaran')->from('data_mak')
                                         ->get()->row()->banyak_anggaran; 
                                         echo 'Rp' . number_format($anggaran, 0, ',', '.') ?></p>
@@ -84,9 +84,9 @@
                   foreach ($data_mak as $dm) {
                   ?>
                     <tr>
-                      <td><?php echo $dm->judul_mak ?></td>
-                      <td><?php echo $dm->tahun ?></td>
-                      <td><?php echo 'Rp' . number_format($dm->banyak_anggaran, 0, ',', '.') ?></td>
+                       <td style="font-size: 12px;"><?php echo $dm->judul_mak ?></td>
+                       <td style="font-size: 12px;"><?php echo $dm->tahun ?></td>
+                       <td style="font-size: 12px;"><?php echo 'Rp' . number_format($dm->banyak_anggaran, 0, ',', '.') ?></td>
                     </tr>
                   <?php } ?>
                 </tbody>
@@ -113,9 +113,9 @@
                   foreach ($data_kegiatan as $dk) {
                   ?>
                     <tr>
-                      <td class="pl-0"><?php echo $dk->judul_kegiatan ?></td>
-                      <td><?php echo $dk->tahun ?></td>
-                      <td><?php echo 'Rp' . number_format($dk->biaya_pengeluaran, 0, ',', '.') ?></td>
+                      <td style="font-size: 12px;" class="pl-0"><?php echo $dk->judul_kegiatan ?></td>
+                       <td style="font-size: 12px;"><?php echo $dk->tahun ?></td>
+                       <td style="font-size: 12px;"><?php echo 'Rp' . number_format($dk->biaya_pengeluaran, 0, ',', '.') ?></td>
                     </tr>
                   <?php } ?>
                 </tbody>
@@ -145,9 +145,9 @@
                   foreach ($data_anggota_perjadin as $dap) {
                   ?>
                     <tr>
-                      <td><?php echo $dap->nama_anggota_perjadin ?></td>
-                      <td><?php echo $dap->kota . ', ' . $dap->nama_provinsi ?></td>
-                      <td><?php echo $dap->dalam_rangka ?></td>
+                       <td style="font-size: 12px;"><?php echo $dap->nama_anggota_perjadin ?></td>
+                       <td style="font-size: 12px;"><?php echo $dap->kota . ', ' . $dap->nama_provinsi ?></td>
+                       <td style="font-size: 12px;"><?php echo $dap->dalam_rangka ?></td>
                       <td class="font-weight-medium">
                         <div class="badge badge-success"><?php echo $dap->status_perjalanan_dinas ?></div>
                       </td>

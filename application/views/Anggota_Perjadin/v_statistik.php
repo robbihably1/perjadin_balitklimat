@@ -13,7 +13,7 @@
                                     <div class="card">
                                         <!-- <div class="card-body"> -->
                                         <div class="table-responsive pt-3 ">
-                                            <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" style="width:100%; height:100%">
+                                            <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" style="width:100%; height:100%">
                                                 <thead class="thead-light">
                                                     <tr>
                                                         <th style="width:3%">Nama</th>
@@ -31,20 +31,20 @@
                                                     ?>
 
                                                         <tr>
-                                                            <td><?php echo $j->nama_anggota_perjadin ?></td>
-                                                            <td><?php echo $j->nip_anggota_perjadin ?></td>
-                                                            <td><?php echo $j->pangkat_anggota ?></td>
-                                                            <td><?php echo $j->golongan_anggota ?></td>
-                                                            <td><?php echo
+                                                             <td style="font-size: 12px;heigth:40px"><label style="margin-top:5px"><?php echo $j->nama_anggota_perjadin ?></label></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->nip_anggota_perjadin ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->pangkat_anggota ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->golongan_anggota ?></td>
+                                                             <td style="font-size: 12px;"><?php echo
                                                                 $this->db->select('*')->from('data_anggota_perjadin')->where('nip_anggota_perjadin =', $j->nip_anggota_perjadin)->get()->num_rows(); ?>
                                                             </td>
-                                                            <td><?php echo
+                                                             <td style="font-size: 12px;"><?php echo
                                                                 $this->db->select_sum('lama_perjalanan')->from('data_anggota_perjadin')
                                                                     ->where('nip_anggota_perjadin =', $j->nip_anggota_perjadin)
                                                                     ->join('data_perjalanan_dinas', 'data_anggota_perjadin.id_perjalanan_dinas = data_perjalanan_dinas.id_perjalanan_dinas')
                                                                     ->get()->row()->lama_perjalanan; ?>
                                                             </td>
-                                                            <td><?php echo 'Rp' . number_format($this->db->select_sum('total_pendapatan')->from('data_anggota_perjadin')
+                                                             <td style="font-size: 12px;"><?php echo 'Rp' . number_format($this->db->select_sum('total_pendapatan')->from('data_anggota_perjadin')
                                                                     ->where('nip_anggota_perjadin =', $j->nip_anggota_perjadin)->get()->row()->total_pendapatan, 0, ',', '.') ?>
                                                             </td>
                                                         </tr>

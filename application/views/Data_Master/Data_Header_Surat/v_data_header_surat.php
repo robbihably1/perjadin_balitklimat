@@ -13,16 +13,16 @@
                             <div class="card">
                                 <!-- <div class="card-body"> -->
                                 <div class="table-responsive pt-3 table-md">
-                                <table id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" style="width:100%; height:100%">
+                                <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" style="width:100%; height:100%">
                                     <thead  class="thead-light">
                                         <tr>
-                                        <th>No</th>
-                                        <th>Nama Kementerian</th>
-                                        <th>Eslon Satu</th>
-                                        <th>Eslon Dua</th>
-                                        <th>Eslon Tiga</th>
-                                        <th>Alamat</th>
-                                        <th>Aksi</th>
+                                        <th style="color:gray;height:40px"><label>No</label></th>
+                                        <th style="color:gray;height:40px"><label>Nama Kementerian</label></th>
+                                        <th style="color:gray;height:40px"><label>Eslon Satu</label></th>
+                                        <th style="color:gray;height:40px"><label>Eslon Dua</label></th>
+                                        <th style="color:gray;height:40px"><label>Eslon Tiga</label></th>
+                                        <th style="color:gray;height:40px"><label>Alamat</label></th>
+                                        <th style="color:gray;height:40px"><label>Aksi</label></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -31,14 +31,14 @@
                                         foreach ($header_surat as $sp) {
                                         ?>
                                         <tr>
-                                            <td><?php echo $no++ ?></td>
-                                            <td><?php echo $sp->nama_kementerian ?></td>
-                                            <td><?php echo $sp->eslon_satu ?></td>
-                                            <td><?php echo $sp->eslon_dua ?></td>
-                                            <td><?php echo $sp->eslon_tiga ?></td>
-                                            <td><?php echo $sp->alamat ?></td>
-                                        <td>
-                                            <a title="Edit data header surat"  class="btn btn-sm btn-success" href="<?php echo base_url('/header_surat/edit/' . $sp->id_header_surat) ?>"><i class="mdi mdi-lead-pencil"></i></a>
+                                             <td style="font-size: 12px;"><?php echo $no++ ?></td>
+                                             <td style="font-size: 12px;"><?php echo $sp->nama_kementerian ?></td>
+                                             <td style="font-size: 12px;"><?php echo $sp->eslon_satu ?></td>
+                                             <td style="font-size: 12px;"><?php echo $sp->eslon_dua ?></td>
+                                             <td style="font-size: 12px;"><?php echo $sp->eslon_tiga ?></td>
+                                             <td style="font-size: 12px;"><?php echo $sp->alamat ?></td>
+                                         <td style="font-size: 12px;">
+                                            <a style ="height:35px"title="Edit data header surat"  class="btn btn-xs btn-success" href="<?php echo base_url('/header_surat/edit/' . $sp->id_header_surat) ?>"><i class="mdi mdi-lead-pencil"></i></a>
                                         </td>
                                         </tr>
                                         <?php } ?>

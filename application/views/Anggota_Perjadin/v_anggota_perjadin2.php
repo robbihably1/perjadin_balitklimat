@@ -33,16 +33,16 @@
                                                     foreach ($data_anggota_perjadin as $j) {
                                                     ?>
                                                         <tr>
-                                                            <td><?php echo $j->nama_anggota_perjadin ?></td>
-                                                            <td><?php echo $j->no_surat_tugas ?></td>
-                                                            <td><?php echo $j->judul_kegiatan ?></td>
-                                                            <td><?php echo $j->dalam_rangka ?></td>
-                                                            <td><?php echo $j->kota_tujuan ?></td>
-                                                            <td><?php echo $j->tanggal_berangkat ?></td>
-                                                            <td><?php echo $j->tanggal_kembali ?></td>
-                                                            <td><?php echo $j->lama_perjalanan ?></td>
-                                                            <td><?php echo 'Rp'.number_format($j->total_pendapatan) ?></td>
-                                                            <td><?php echo $j->nama_pumk ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->nama_anggota_perjadin ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->no_surat_tugas ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->judul_kegiatan ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->dalam_rangka ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->kota_tujuan ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->tanggal_berangkat ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->tanggal_kembali ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->lama_perjalanan ?></td>
+                                                             <td style="font-size: 12px;"><?php echo 'Rp'.number_format($j->total_pendapatan) ?></td>
+                                                             <td style="font-size: 12px;"><?php echo $j->nama_pumk ?></td>
                                                     <?php } ?>
                                                 </tbody>
                                             </table>
