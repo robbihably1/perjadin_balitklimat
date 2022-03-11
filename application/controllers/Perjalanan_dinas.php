@@ -165,7 +165,7 @@ class Perjalanan_dinas extends CI_Controller
         );
         $this->load->Model('Model_perjalanan_dinas');
         $this->Model_perjalanan_dinas->update_data($where, $data, 'data_perjalanan_dinas');
-        $this->session->set_flashdata('sukses','Data perjalanan dinas berhasil diperbarui');
+        $this->session->set_flashdata('sukses','Data perjalanan dinas berhasil diperbarui! Jika anda memperbarui kota tujuan, harap perbarui juga data anggota pada perjalanan dinas ini!');
         redirect('perjalanan_dinas');
     }
     function hapus($id_perjalanan_dinas)

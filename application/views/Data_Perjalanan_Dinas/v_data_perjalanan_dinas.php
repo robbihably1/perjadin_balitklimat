@@ -49,7 +49,7 @@
                                                         <tr>
                                                             <td colspan="12" class="hiddenRow">
                                                                 <div class="accordian-body collapse" id="data<?php echo $j->id_perjalanan_dinas ?>">
-                                                                    <table style="margin-top:5px; width:97%; margin-left:21px;margin-bottom:5px;" class="table table-bordered table-md">
+                                                                    <table style="margin-top:5px; width:98%; margin-left:8px;margin-bottom:5px;" class="table table-bordered table-md">
                                                                         <a style="height:35px; margin-top:10px; margin-left:21px;margin-bottom:5px;"class="btn btn-xs btn-info mdi mdi-file"> <b>Surat Pengajuan</a>
                                                                         <a style="height:35px; margin-top:10px; margin-left:21px;margin-bottom:5px;"class="btn btn-xs btn-info mdi mdi-file"> <b>Perincian</a>
                                                                         <a style="height:35px; margin-top:10px; margin-left:21px;margin-bottom:5px;"class="btn btn-xs btn-info mdi mdi-file" href="<?php echo base_url('pdf/surat_tugas/' . $j->id_perjalanan_dinas) ?>"> <b>Surat Tugas (Kepala Balai)</a>
@@ -99,7 +99,7 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                         </td>
-                                                                                         <td style="font-size: 12px;">
+                                                                                         <td>
                                                                                             <a style="height:35px;" title="Edit data anggota perjalanan dinas" class="btn btn-xs btn-success" href="<?php echo base_url() ?>anggota_perjadin/edit?id_anggota_perjadin=<?php echo $d->id_anggota_perjadin ?>"><i class="mdi mdi-pencil"></i></a>
                                                                                             <a style="height:35px;"title="Hapus data anggota perjalanan dinas" id="hapus_anggota_perjalanan_dinas" class="btn btn-xs btn-danger" href="<?php echo base_url() ?>anggota_perjadin/hapus/<?php echo $d->id_anggota_perjadin . '/' . $d->kode_mak . '/' . $d->kode_kegiatan ?>"><i class="mdi mdi-trash-can"></i></a>
                                                                                         </td>

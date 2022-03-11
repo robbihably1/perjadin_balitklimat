@@ -24,48 +24,52 @@
     <!-- Each sheet element should have the class "sheet" -->
     <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
     <!-- Write HTML just like a web page -->
-    <p style="text-align:center"><?php echo $header->nama_kementerian ?></p><br>
-    <h4 style="text-align:center;margin-top:-30px"><b><?php echo $header->eslon_tiga ?></b></h4><br>
-    <p style="text-align:center;margin-top:-30px"><?php echo $header->alamat ?></p>
-    <hr color="black" style="margin-top:-10px; height:0.1px;width:90%">
-    <hr color="black" style="margin-top:-14px; height:0.1px;width:90%"><br><br><br>
-    <h4 style="text-align:center;margin-top:-60px"><b>DAFTAR PENGELUARAN RIIL</b></h4>
+    <p style="text-align:center"><b><?php echo $header->nama_kementerian ?></b></p><br>
+    <p style="text-align:center;margin-top:-40px"><b><?php echo $header->eslon_satu ?></b></p><br>
+    <h4 style="text-align:center;margin-top:-40px"><b><?php echo $header->eslon_tiga ?></b></h4>
+    <div>
+        <hr style="margin-top:-17px" width=56% color="black" height=1px>
+    </div>
+    <div>
+        <p style="text-align:center;margin-top:-10px"><b>RINCIAN BIAYA PERJALANAN DINAS</b></p>
+    </div>
     <?php
     $p = $isi_surat;
     ?>
-    <p style="text-align:justify;margin-top:30px;margin-left:75px;width:92%">Yang bertanda tangan di bawah ini:<br>
-    <p style="text-align:justify;margin-top:10px;margin-left:75px;width:92%;position:absolute;z-index:0">Nama
-    <p style="text-align:justify;margin-left:150px;width:92%;;position:absolute;z-index:0">: <?php echo $p->nama_pegawai ?>
-    <p style="text-align:justify;margin-top:25px;margin-left:75px;width:92%;position:absolute;z-index:0">NIP
-    <p style="text-align:justify;margin-top:25px;margin-left:150px;width:92%;position:absolute;z-index:0">: <?php echo $p->nip ?>
-    <p style="text-align:justify;margin-top:45px;margin-left:75px;width:92%;position:absolute;z-index:0">Jabatan
-    <p style="text-align:justify;margin-top:45px;margin-left:150px;width:92%;position:absolute;z-index:0">: <?php echo $p->jabatan ?><br>
-    <p style="text-align:justify;margin-top:85px;margin-left:75px;width:92%;position:absolute;z-index:0">Berdasarkan Surat Perintah Perjalanan Dinas (SPPD) pada :
-    <p style="text-align:justify;margin-top:110px;margin-left:75px;width:92%;position:absolute;z-index:0">Tanggal
-    <p style="text-align:justify;margin-top:110px;margin-left:150px;width:92%;position:absolute;z-index:0">:
-    <p style="text-align:justify;margin-top:135px;margin-left:75px;width:92%;position:absolute;z-index:0">Nomor
-    <p style="text-align:justify;margin-top:135px;margin-left:150px;width:92%;position:absolute;z-index:0">: <?php echo $p->no_sppd . $p->no_sppd2 ?><br>
-    <p style="text-align:justify;margin-top:180px;margin-left:75px;width:75%; position:absolute;z-index:5">1.
-    <p style="text-align:justify;margin-top:180px;margin-left:100px;width:80%; position:absolute;z-index:5">Biaya transport pegawai dan / atau biaya penginapan di bawah ini yang tidak dapat diperoleh bukti-bukti
-        pengeluarannya meliputi:
-    <table id="table" class="table table-bordered table-sm" style="width:92%;margin-left:100px;color:black;margin-top:260px;">
+    <p style="text-align:justify;margin-top:10px;margin-left:75px;width:92%;position:absolute;z-index:0">Lampiran SPPD Nomor
+    <p style="text-align:justify;margin-left:230px;width:92%;;position:absolute;z-index:0">: <?php echo $p->no_sppd . $p->no_sppd2 ?>
+    <p style="text-align:justify;margin-top:25px;margin-left:75px;width:92%;position:absolute;z-index:0">Tanggal
+    <p style="text-align:justify;margin-top:25px;margin-left:230px;width:92%;position:absolute;z-index:0">:
+    <table id="table" class="table table-bordered table-sm" style="width:92%;margin-left:75px;color:black;margin-top:70px;">
         <!-- <table  id="dtBasicExample" class="table table-striped table-bordered table-md" cellspacing="0" height='50%'> -->
         <thead>
             <tr>
-                <th style="width:7%;text-align:center">No</th>
-                <th style="text-align:center">Uraian</th>
-                <th style="width:25%;text-align:center">Jumlah</th>
+                <th style="width:7%;text-align:center">NO</th>
+                <th style="text-align:center">RINCIAN BIAYA</th>
+                <th style="width:15%;text-align:center">JUMLAH</th>
+                <th style="width:15%;text-align:center">KET</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="text-align:center"></td>
-                <td style="height:90px"></td>
+                <td style="text-align:center">
+                    <label style="margin-top:-15px"><b>1.<b></label><br><br>
+                    <label><b>2.</b></label>
+                </td>
+
+                <td>
+                <label><b>Uang Harian</b></label><br>
+                <label>a. Pegawai</label><br>
+                <label> <b>Transportasi</b></label>
+                </td>
+
+                <td></td>
                 <td></td>
             </tr>
             <tr>
                 <td style="text-align:center"></td>
                 <td style="text-align:center"><b>Jumlah</b></td>
+                <td></td>
                 <td></td>
             </tr>
         </tbody>
@@ -86,7 +90,7 @@
     <p style="text-align:left;margin-top:210px;margin-left:100px;width:92%;position:absolute;z-index:2">Pejabat Pembuat Komitmen
     <p style="text-align:left;margin-top:320px;margin-left:100px;width:92%;position:absolute;z-index:3"><?php echo $p->nama_ppk ?>
     <p style="text-align:left;margin-top:350px;margin-left:100px;width:92%;position:absolute;z-index:4">NIP.<?php echo ' ' . $p->nip_ppk ?>
-   
+
 
 
 </body>
